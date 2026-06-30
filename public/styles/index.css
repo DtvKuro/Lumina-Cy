@@ -1,0 +1,176 @@
+*{margin: 0; 
+  padding: 0; 
+  font-family: 'Hanken Grotesk', sans-serif;
+  color: #bbc9cfa9;
+}
+header {
+  background-color: #1e2020;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+}
+body{
+  background-color: #0f0f0f;
+ }
+ 
+main{
+}
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #121414;
+  padding: 40px;
+}
+
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.brand{
+  color: #E0E0E0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.copyright{
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+.nav-links{
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.footer-links{
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+li{
+  font-size: 0.8rem;
+
+}
+
+a{
+  text-decoration: none;
+}
+.nav-links a:hover{
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+}
+.active{
+  color: cyan;
+  font-size: 14px;
+}
+
+.hero, .hero-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-text{
+  margin-bottom: 50px;
+}
+.hero-text h1{
+  padding: 50px 0 5px 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 3rem;
+} 
+.post-card{
+  background-color: #15151B;
+  border: 2px solid #202126;
+  width: 60vh;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(137, 236, 236, 0.514);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-group label{
+  font-family: 'Geist', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #00d4ff;
+  letter-spacing: 1px;
+}
+.form-group input{
+  background-color: #1a1a24;
+  border: 1px solid #2a2a35;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'Geist', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #e2e2e2;
+  outline: none;
+}
+.form-group textarea{
+  background-color: #1a1a24;
+  border: 1px solid #2a2a35;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 0.9rem;
+  color: #e2e2e2;
+  outline: none;
+  resize: none;
+  min-height: 250px;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+  color: #4a4a5a;
+}
+.form-actions{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 10px;
+}
+.publish-btn{
+  font-family: 'Geist', sans-serif;
+  padding: 8px 28px;
+  border-radius: 20px;
+  border: none;
+  background-color: #00d4ff;
+  color: #00586b;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.publish-btn:hover{
+  opacity: 0.4;
+}
+.publish-btn:active{
+  background-color: #15151B;
+  color: #00d4ff;
+  outline: 1px solid #00d4ff;
+  outline-offset: -1px;
+}
+.footer-socials{
+  display: flex;
+  gap: 5px;
+}
+.footer-socials button{
+  background: none;
+  border: 1px solid #3c494e;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  color: #bbc9cfa9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

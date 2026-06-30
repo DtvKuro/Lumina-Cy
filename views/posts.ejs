@@ -1,0 +1,136 @@
+<%- include("partials/header.ejs")%>
+
+<main>
+  <div class="posts-page">
+    <div class="posts-header">
+      <h1>Chronicles.</h1>
+      <p>
+        Everything you write is yours alone, and it will tell alot about your life.
+      </p>
+    </div>
+		<br>
+		<% if (posts.length > 0) { %>
+		
+   	<div class="posts-list" id="posts-container">
+     <% posts.forEach(post => { %>
+     	<div class="post-card" onclick="openModal(`<%= post.id %>`, `<%= post.title %>`, `<%= post.content %>`)">
+      	 <h3><%= post.title %></h3>
+     	</div>
+     <%}); %>
+   </div>
+		<% } else { %>
+			<div class="empty-state" id="empty-state">
+			  <span class="material-symbols-outlined">edit_note</span>
+			  <p>No posts yet. Go write something!</p>
+			  <a href="/">Return to Home</a>
+			  </div>
+			</div>
+		<% } %>
+
+
+</main>
+
+<!-- Modal Overlay -->
+<div class="modal-overlay hidden" id="modal-overlay">
+  <div class="modal-card" id="post-modal">
+    <div class="modal-header">
+      <button class="modal-btn" onclick="closeModal()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="modal-menu-wrapper">
+        <button class="modal-btn" onclick="toggleMenu()">
+          <span class="material-symbols-outlined">more_vert</span>
+        </button>
+        <div class="action-menu hidden" id="action-menu">
+          <button class="menu-item" onclick="enterEditMode()">
+            <span class="material-symbols-outlined">edit</span> Edit
+          </button>
+						<form id="delete-post" action="" method="POST">
+							<button class="menu-item delete" onclick="deletePost()">
+						  	<span class="material-symbols-outlined">delete</span> Delete
+							</button>
+						</form>
+				</div>
+      </div>
+    </div>
+
+    <!-- View Mode -->
+    <div class="modal-body" id="modal-view-mode">
+      <h2 id="modal-title"></h2>
+      <div class="modal-divider"></div>
+      <p id="modal-desc"></p>
+    </div>
+
+    <!-- Edit Mode -->
+    <form id= "edit-form" action="" method="POST">
+      <div class="modal-body hidden" id="modal-edit-mode">
+        <h3 class="edit-heading">Edit Post</h3>
+        <div class="edit-form">
+          <div class="edit-group">
+            <label for="edit-title">Post Title</label>
+            <input type="text" id="edit-title" name="title" />
+          </div>
+          <div class="edit-group">
+            <label for="edit-desc">Description</label>
+            <textarea id="edit-desc" rows="4" name="content"></textarea>
+          </div>
+          <div class="edit-actions">
+            <button class="save-btn" onclick="saveEdit()">
+              Save Changes
+            </button>
+            <button class="cancel-btn" onclick="exitEditMode()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+
+function openModal(id, title, content){
+  document.getElementById("modal-overlay").classList.remove("hidden");
+	document.getElementById("post-modal").classList.add("show");
+  document.getElementById("modal-title").textContent = title;
+  document.getElementById("modal-desc").textContent = content;
+  document.getElementById("edit-form").action = "/edit/" + id;
+  document.getElementById("delete-post").action = "/delete/" + id;
+	}
+
+function closeModal(){
+	document.getElementById("modal-overlay").classList.add("hidden");
+	document.getElementById("post-modal").classList.remove("show");
+	document.getElementById("modal-edit-mode").classList.add("hidden");
+	document.getElementById("modal-view-mode").classList.remove("hidden");
+	document.getElementById("action-menu").classList.add("hidden");
+}
+
+function toggleMenu() { 
+	document.getElementById("action-menu").classList.toggle("hidden");
+}
+
+function enterEditMode(){
+	document.getElementById("modal-edit-mode").classList.remove("hidden");
+	document.getElementById("modal-view-mode").classList.add("hidden");
+	document.getElementById("edit-title").value = document.getElementById("modal-title").textContent;
+	document.getElementById("edit-desc").value = document.getElementById("modal-desc").textContent;
+}
+
+function exitEditMode(){
+	document.getElementById("modal-edit-mode").classList.add("hidden");
+	document.getElementById("modal-view-mode").classList.remove("hidden");
+}
+
+function saveEdit(){
+	document.getElementById("edit-form").submit();
+}
+
+
+function deletePost(){
+	document.getElementById("delete-post").submit();
+}
+</script>
+
+<%- include("partials/footer.ejs")%>

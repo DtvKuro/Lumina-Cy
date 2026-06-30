@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+  <div class="hero">
+    <div class="hero-text">
+      <h1>What's on your mind?</h1>
+      <p>Treat me as your digital companion ready to listen.</p>
+      <p>A place you can speak your voice out.</p>
+    </div>
+
+    <form class="post-card" action="/create" method="POST">
+      <div class="form-group">
+        <label for="title">ENTRY TITLE</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Untitled Note"
+        />
+      </div>
+      <div class="form-group">
+        <label for="content">YAP HERE</label>
+        <textarea
+          id="content"
+          name="content"
+          placeholder="Start typing your note here..."
+        ></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="publish-btn">Publish</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<%- include("partials/footer.ejs") %>

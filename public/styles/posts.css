@@ -1,0 +1,327 @@
+/* Posts Page */
+.posts-page{
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+.posts-header{
+  margin-bottom: 60px;
+}
+.posts-header h1{
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e2e2e2;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.posts-header p{
+  font-family: 'Inter', sans-serif;
+  color: #bbc9cf;
+  max-width: 400px;
+}
+
+/* Post List */
+.posts-list{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.post-item{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 16px;
+}
+.post-link{
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e2e2e2;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+.post-link:hover{
+  color: #a8e8ff;
+  transform: translateX(4px);
+}
+
+.posts-list .post-card{
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.posts-list .post-card:hover{
+  transform: translateX(4px);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+/* Empty State */
+.empty-state{
+  text-align: center;
+  padding: 80px 0;
+}
+.empty-state .material-symbols-outlined{
+  font-size: 3.5rem;
+  color: #00d4ff;
+  margin-bottom: 24px;
+}
+.empty-state p{
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e2e2e2;
+  margin-bottom: 16px;
+}
+.empty-state a{
+  font-family: 'Geist', sans-serif;
+  color: #00d4ff;
+  font-size: 0.875rem;
+}
+.empty-state a:hover{
+  text-decoration: underline;
+}
+
+/* Modal */
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.hidden{
+  display: none;
+}
+.modal-card{
+  background: rgba(22, 33, 62, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 640px;
+  border-radius: 12px;
+  padding: 40px;
+  position: relative;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.modal-card.show{
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Modal Header */
+.modal-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.modal-btn{
+  background: none;
+  border: none;
+  color: #bbc9cf;
+  cursor: pointer;
+  padding: 4px;
+}
+.modal-btn:hover{
+  color: #e2e2e2;
+}
+.modal-menu-wrapper{
+  position: relative;
+}
+
+/* Action Menu */
+.action-menu{
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 8px;
+  width: 160px;
+  background: #282a2b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 110;
+}
+.action-menu.hidden{
+  display: none;
+}
+.menu-item{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-family: 'Geist', sans-serif;
+  font-size: 0.875rem;
+  color: #e2e2e2;
+  cursor: pointer;
+  text-align: left;
+}
+.menu-item:hover{
+  background: rgba(0, 212, 255, 0.1);
+  color: #a8e8ff;
+}
+.menu-item.delete:hover{
+  background: rgba(255, 180, 171, 0.1);
+  color: #ffb4ab;
+}
+.menu-item .material-symbols-outlined{
+  font-size: 18px;
+}
+
+/* Modal Body - View */
+.modal-body h2{
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e2e2e2;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.modal-divider{
+  width: 80px;
+  height: 4px;
+  background: #00d4ff;
+  margin-bottom: 32px;
+}
+.modal-body p{
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #bbc9cf;
+}
+.modal-body.hidden{
+  display: none;
+}
+
+/* Modal Body - Edit */
+.edit-heading{
+  font-family: 'Geist', sans-serif;
+  font-size: 0.875rem;
+  color: #00d4ff;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+.edit-form{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.edit-group{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.edit-group label{
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #bbc9cf;
+}
+.edit-group input,
+.edit-group textarea{
+  background: #0d0e0f;
+  border: 1px solid #3c494e;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #e2e2e2;
+  outline: none;
+  resize: none;
+}
+.edit-group input:focus,
+.edit-group textarea:focus{
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 1px #00d4ff;
+}
+.edit-actions{
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+}
+.save-btn{
+  font-family: 'Geist', sans-serif;
+  padding: 10px 24px;
+  background: #00d4ff;
+  color: #00586b;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.save-btn:hover{
+  opacity: 0.9;
+}
+.cancel-btn{
+  font-family: 'Geist', sans-serif;
+  padding: 10px 24px;
+  background: none;
+  color: #e2e2e2;
+  border: 1px solid #3c494e;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cancel-btn:hover{
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Modal Body - Delete */
+.delete-confirm{
+  text-align: center;
+  padding: 40px 0;
+}
+.warning-icon{
+  font-size: 3rem;
+  color: #ffb4ab;
+  margin-bottom: 16px;
+}
+.delete-confirm h3{
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e2e2e2;
+  margin-bottom: 8px;
+}
+.delete-confirm p{
+  color: #bbc9cf;
+  margin-bottom: 32px;
+}
+.delete-actions{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.delete-btn{
+  font-family: 'Geist', sans-serif;
+  padding: 12px 32px;
+  background: #93000a;
+  color: #ffdad6;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.delete-btn:hover{
+  opacity: 0.9;
+}
+
+/* Utility */
+.hidden{
+  display: none;
+}
