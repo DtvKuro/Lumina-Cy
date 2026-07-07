@@ -34,6 +34,8 @@ footer{
   color: #E0E0E0;
   font-size: 2rem;
   font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .copyright{
@@ -51,6 +53,9 @@ footer{
   display: flex;
   list-style-type: none;
   gap: 20px;
+}
+.footer-links li{
+  cursor: pointer;
 }
 li{
   font-size: 0.8rem;
@@ -162,7 +167,8 @@ a{
   display: flex;
   gap: 5px;
 }
-.footer-socials button{
+.footer-socials button,
+.footer-socials a{
   background: none;
   border: 1px solid #3c494e;
   border-radius: 50%;
