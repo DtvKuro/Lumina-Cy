@@ -74,3 +74,7 @@ fonts
   Inter — body text and captions                     https://fonts.google.com/specimen/Inter
   Geist — labels, buttons, and nav links             https://fonts.google.com/specimen/Geist
   icons: Material Symbols Outlined                   https://fonts.google.com/icons
+
+---
+
+live demo: https://lumina-cy.onrender.com
